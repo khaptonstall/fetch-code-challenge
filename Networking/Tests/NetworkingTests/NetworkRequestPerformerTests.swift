@@ -16,7 +16,7 @@ final class NetworkRequestPerformerTests: XCTestCase {
     func testPerformRequestUsesResponseValidators() async throws {
         // Setup a mock task handler to avoid real network calls
         let taskHandler = MockNetworkTaskHandler()
-        let requestPerformer = NetworkRequestPerformer(urlSession: taskHandler)
+        let requestPerformer = NetworkRequestPerformer(taskHandler: taskHandler)
 
         // Create a request object that will validate we get a 2xx status code
         let urlRequest = try URLRequest.makeRequest(url: "https://google.com", method: .get)
@@ -42,7 +42,7 @@ final class NetworkRequestPerformerTests: XCTestCase {
     func testPerformRequestSuccessfullyParsesData() async throws {
         // Setup a mock task handler to avoid real network calls
         let taskHandler = MockNetworkTaskHandler()
-        let requestPerformer = NetworkRequestPerformer(urlSession: taskHandler)
+        let requestPerformer = NetworkRequestPerformer(taskHandler: taskHandler)
 
         // Create a request object that will validate we get a 2xx status code
         let urlRequest = try URLRequest.makeRequest(url: "https://google.com", method: .get)

@@ -64,7 +64,7 @@ public actor MockNetworkTaskHandler {
     /// - Parameters:
     ///   - httpMethod: The HTTP method to mock
     ///   - host: The host to mock (e.g. "www.google.com")
-    ///   - path: The path to a given resource to mock. Do not include a leading slash. (e.g. "path/to/resource")
+    ///   - path: The path to a given resource to mock, including a leading slash. (e.g. "/path/to/resource")
     ///   - statusCode: The status code to response with.
     ///   - data: The data to respond with.
     public func mockRequest(httpMethod: HTTPMethod,
@@ -72,7 +72,7 @@ public actor MockNetworkTaskHandler {
                             path: String = "",
                             statusCode: Int = 200,
                             data: Data? = nil) {
-        let requestKey = "\(httpMethod.rawValue) \(host)/\(path)"
+        let requestKey = "\(httpMethod.rawValue) \(host)\(path)"
         let mockedResponse = MockedReponse(httpMethod: httpMethod, statusCode: statusCode, data: data)
         mockedRequests[requestKey] = mockedResponse
     }
@@ -110,6 +110,6 @@ extension MockNetworkTaskHandler: NetworkTaskHandler {
             throw MockNetworkError.invalidURLRequest
         }
 
-        return "\(httpMethod) \(host)/\(path)"
+        return "\(httpMethod) \(host)\(path)"
     }
 }

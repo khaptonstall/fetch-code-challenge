@@ -11,13 +11,13 @@ import Foundation
 public final class NetworkRequestPerformer: Sendable {
     // MARK: Properties
 
-    let urlSession: NetworkTaskHandler
+    let taskHandler: NetworkTaskHandler
 
     // MARK: Initialization
 
     /// - Parameter urlSession: The object used to perform underlying network requests.
-    public init(urlSession: NetworkTaskHandler = URLSession.shared) {
-        self.urlSession = urlSession
+    public init(taskHandler: NetworkTaskHandler = URLSession.shared) {
+        self.taskHandler = taskHandler
     }
 
     // MARK: Performing Requests
@@ -27,7 +27,7 @@ public final class NetworkRequestPerformer: Sendable {
     /// response object and throw an error if validation fails.
     public func performRequest<T: NetworkRequest>(_ networkRequest: T) async throws -> T.ResponseDataType {
         let request = try networkRequest.makeRequest()
-        let (data, response) = try await urlSession.data(for: request, delegate: nil)
+        let (data, response) = try await taskHandler.data(for: request, delegate: nil)
 
         // Ensure we can get information about the HTTP response.
         guard let httpResponse = response as? HTTPURLResponse else {
