@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  CodeChallenge
+//
+//  Created by Kyle Haptonstall on 4/5/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Shared.xcconfig"
+
+// Debug Symbols
+// Avoid generating dSYMs on each debug build
+DEBUG_INFORMATION_FORMAT = dwarf
