@@ -72,7 +72,15 @@ public actor MockNetworkTaskHandler {
                             path: String = "",
                             statusCode: Int = 200,
                             data: Data? = nil) {
-        let requestKey = "\(httpMethod.rawValue) \(host)\(path)"
+        let sanitizedPath = {
+            guard !path.isEmpty else { return path }
+            if path.hasPrefix("/") {
+                return path
+            } else {
+                return "/\(path)"
+            }
+        }()
+        let requestKey = "\(httpMethod.rawValue) \(host)\(sanitizedPath)"
         let mockedResponse = MockedReponse(httpMethod: httpMethod, statusCode: statusCode, data: data)
         mockedRequests[requestKey] = mockedResponse
     }
@@ -106,7 +114,7 @@ extension MockNetworkTaskHandler: NetworkTaskHandler {
     private func mockedRequestKey(for request: URLRequest) throws -> MockedRequestKey {
         guard let httpMethod = request.httpMethod,
               let host = request.url?.host(),
-              let path = request.url?.path() else {
+              let path = request.url?.path() else { // Note: the path will be returned with a leading slash
             throw MockNetworkError.invalidURLRequest
         }
 
