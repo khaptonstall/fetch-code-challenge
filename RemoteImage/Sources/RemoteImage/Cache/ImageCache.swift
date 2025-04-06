@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 actor ImageCache {
+    typealias URLString = NSString
+
     enum DataError: Error {
         /// Occurs when the data downloaded from the server does not represent a valid image object
         case invalidImage
@@ -20,8 +22,7 @@ actor ImageCache {
     static let shared = ImageCache()
 
     /// Cache used to store downloaded image data.
-    /// Key == a url
-    private let cache: NSCache<NSString, CacheEntryObject> = NSCache()
+    private let cache: NSCache<URLString, CacheEntryObject> = NSCache()
 
     // MARK: Initialization
 
