@@ -1,9 +1,4 @@
-//
-//  RecipeListViewModelTests.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/6/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Combine
 import Foundation
@@ -14,7 +9,6 @@ import Networking
 import XCTest
 
 final class RecipeListViewModelTests: XCTestCase {
-
     // MARK: Properties
 
     private var subscriptions: Set<AnyCancellable> = []
@@ -23,7 +17,7 @@ final class RecipeListViewModelTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
-        self.subscriptions = []
+        subscriptions = []
     }
 
     // MARK: Tests
@@ -112,8 +106,8 @@ private extension RecipeListViewModelTests {
             .sink { state in
                 stateUpdates.append(state)
                 stateExpectation.fulfill()
-        }
-        .store(in: &subscriptions)
+            }
+            .store(in: &subscriptions)
 
         // Trigger state updates
         await trigger()
@@ -122,6 +116,3 @@ private extension RecipeListViewModelTests {
         XCTAssertEqual(stateUpdates, expectedStates)
     }
 }
-
-
-

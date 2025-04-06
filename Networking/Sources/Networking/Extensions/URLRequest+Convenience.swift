@@ -1,9 +1,4 @@
-//
-//  URLRequest+Convenience.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 

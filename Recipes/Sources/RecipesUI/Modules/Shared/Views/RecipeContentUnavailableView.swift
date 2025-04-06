@@ -1,9 +1,4 @@
-//
-//  RecipeContentUnavailableView.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import SwiftUI
@@ -14,7 +9,6 @@ struct RecipeContentUnavailableView<
     Description: View,
     Actions: View
 >: View {
-
     // MARK: Properties
 
     let label: Label
@@ -46,7 +40,6 @@ struct RecipeContentUnavailableView<
 // MARK: - Default Implementations
 
 extension RecipeContentUnavailableView where Label == IconLabel, Description == DescriptionLabel, Actions == Button<Text> {
-    
     /// A view variation for informing the user there are no results to display.
     /// - Parameter tryAgainAction: An action triggered when the user taps a button to try the action again.
     @ViewBuilder

@@ -1,9 +1,4 @@
-//
-//  GetRecipes.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import Networking
@@ -21,12 +16,12 @@ public struct GetRecipes: NetworkRequest {
     }
 
     public func makeRequest() throws -> URLRequest {
-        return try URLRequest.makeRequest(
+        try URLRequest.makeRequest(
             url: url,
             method: .get
         )
     }
-    
+
     public func parseResponse(data: Data) throws -> [Recipe] {
         let response = try JSONDecoder.default.decode(GetRecipesResponse.self, from: data)
         return response.recipes

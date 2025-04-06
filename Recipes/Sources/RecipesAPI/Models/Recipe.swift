@@ -1,9 +1,4 @@
-//
-//  Recipe.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 
@@ -62,7 +57,6 @@ public struct Recipe: Codable, Sendable {
         self.sourceURL = sourceURL
         self.youtubeURL = youtubeURL
     }
-
 }
 
 // MARK: Equatable

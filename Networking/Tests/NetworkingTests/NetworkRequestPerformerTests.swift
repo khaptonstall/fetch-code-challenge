@@ -1,16 +1,10 @@
-//
-//  NetworkRequestPerformerTests.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
-@testable import Networking
 import MockNetworking
+@testable import Networking
 import XCTest
 
 final class NetworkRequestPerformerTests: XCTestCase {
-
     /// Verifies performing a request will evaluate the network request's validators
     /// and throw an error on validation failure.
     func testPerformRequestUsesResponseValidators() async throws {
@@ -26,7 +20,6 @@ final class NetworkRequestPerformerTests: XCTestCase {
         )
         // Mock the request and return an invalid status code
         try await taskHandler.mockRequest(urlRequest, statusCode: 500, data: nil)
-
 
         // Perform the request and expect an error
         do {
@@ -56,7 +49,6 @@ final class NetworkRequestPerformerTests: XCTestCase {
         let result = try await requestPerformer.performRequest(mockRequest)
         XCTAssertEqual(result.id, "123")
     }
-
 }
 
 // MARK: - Utilities
@@ -64,4 +56,3 @@ final class NetworkRequestPerformerTests: XCTestCase {
 private struct MockResponseDataType: Codable {
     let id: String
 }
-

@@ -1,9 +1,4 @@
-//
-//  RemoteImage.swift
-//  RemoteImage
-//
-//  Created by Kyle Haptonstall on 4/6/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import SwiftUI
@@ -26,7 +21,7 @@ public struct RemoteImage: View {
         }
         .task {
             do {
-                self.imageData = try await ImageCache.shared.image(from: url)
+                imageData = try await ImageCache.shared.image(from: url)
             } catch {
                 // TODO: Handle error (e.g. allow user to set an error fallback image)
             }
@@ -39,4 +34,3 @@ public struct RemoteImage: View {
         self.url = url
     }
 }
-

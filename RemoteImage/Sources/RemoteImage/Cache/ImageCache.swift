@@ -1,10 +1,4 @@
-
-//
-//  ImageCache.swift
-//  RemoteImage
-//
-//  Created by Kyle Haptonstall on 4/6/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import UIKit
@@ -27,16 +21,16 @@ actor ImageCache {
     // MARK: Initialization
 
     private init() {}
-    
+
     // MARK: Caching
 
     func image(from url: URL) async throws -> Data {
         // Check for a previously cached image or an in-flight download
         if let cached = cache[url] {
             switch cached {
-            case .inProgress(let task):
+            case let .inProgress(task):
                 return try await task.value
-            case .ready(let image):
+            case let .ready(image):
                 return image
             }
         }
