@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Recipe+Identifiable.swift
 //  Recipes
 //
 //  Created by Kyle Haptonstall on 4/5/25.
