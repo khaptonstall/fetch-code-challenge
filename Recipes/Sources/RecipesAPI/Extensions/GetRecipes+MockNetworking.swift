@@ -11,6 +11,7 @@ import Foundation
 import Networking
 import MockNetworking
 
+/// Convenience methods for mocking the `GetRecipes` request.
 public extension MockNetworkTaskHandler {
     func mockGetRecipes(
         statusCode: Int = 200,
