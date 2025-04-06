@@ -41,8 +41,7 @@ The demo will go through the following scenarios, in order:
 3. Handling a scenario where the recipes data is malformed
 4. Reloading the full recipes list again
 
-![](Assets/Demo.mov)
-
+➡️ See Demo in [Assets/Demo.mov](Assets/Demo.mov)
 
 ### Focus Areas: What specific areas of the project did you prioritize? Why did you choose to focus on these areas?
 
