@@ -34,7 +34,7 @@ struct RecipeItem: View {
 // MARK: - RecipeItem + Placeholder
 
 extension RecipeItem {
-    /// A placehold `RecipeItem` that can be used to represent loading states.
+    /// A placeholder `RecipeItem` that can be used to represent loading states.
     @ViewBuilder
     static var placeholder: some View {
         RecipeItem(
