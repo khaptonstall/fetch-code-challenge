@@ -16,9 +16,18 @@ public struct RecipesList: View {
     @State private var getRecipesTaskID = UUID().uuidString
 
     public var body: some View {
-        VStack {
+        ZStack {
+            List(viewModel.recipes) { recipe in
+                RecipeItem(
+                    cuisine: recipe.cuisine,
+                    recipeName: recipe.name,
+                    photoURL: recipe.smallPhotoURL
+                )
+            }
+            .refreshable(action: triggerRecipesReload)
+
             switch viewModel.state {
-            case .loading:
+            case .none, .loading:
                 LoadingView()
             case .error(let message):
                 RecipeContentUnavailableView
@@ -27,21 +36,9 @@ public struct RecipesList: View {
                         tryAgainAction: triggerRecipesReload
                     )
             case .loaded:
-                if viewModel.recipes.isEmpty {
-                    RecipeContentUnavailableView
-                        .noResults(tryAgainAction: triggerRecipesReload)
-                } else {
-                    List(viewModel.recipes) { recipe in
-                        RecipeItem(
-                            cuisine: recipe.cuisine,
-                            recipeName: recipe.name,
-                            photoURL: recipe.smallPhotoURL
-                        )
-                    }
-                    .refreshable(action: triggerRecipesReload)
-                }
-            case .none:
-                EmptyView()
+                RecipeContentUnavailableView
+                    .noResults(tryAgainAction: triggerRecipesReload)
+                    .opacity(viewModel.recipes.isEmpty ? 1 : 0)
             }
         }
         .task(id: getRecipesTaskID) {

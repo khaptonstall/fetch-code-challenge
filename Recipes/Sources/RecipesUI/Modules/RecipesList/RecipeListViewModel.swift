@@ -29,8 +29,6 @@ class RecipeListViewModel: ObservableObject {
     @Published fileprivate(set) var recipes: [Recipe] = []
     @Published fileprivate(set) var state: State = .none
 
-    var showNoResultsView: Bool { state == .loaded && recipes.isEmpty }
-
     private let recipesAPI: RecipesAPI
 
     // MARK: Initialization
