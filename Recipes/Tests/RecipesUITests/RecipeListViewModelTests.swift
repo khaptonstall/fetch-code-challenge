@@ -28,6 +28,7 @@ final class RecipeListViewModelTests: XCTestCase {
 
     // MARK: Tests
 
+    /// Verifies the recipes array will be updated after successfully fetching recipes from the network.
     @MainActor
     func testRecipesUpdatesOnGetRecipesSuccess() async throws {
         // Setup a mock RecipesAPI
@@ -48,6 +49,7 @@ final class RecipeListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.recipes, [recipe])
     }
 
+    /// Verifies the state transitions which take place on successfully fetching recipes.
     @MainActor
     func testStateUpdatesOnGetRecipesSuccess() async throws {
         // Setup a mock RecipesAPI
@@ -67,6 +69,7 @@ final class RecipeListViewModelTests: XCTestCase {
         }
     }
 
+    /// Verifies the state transitions which take place on failing to fetch recipes.
     @MainActor
     func testStateUpdatesOnGetRecipesFails() async throws {
         // Setup a mock RecipesAPI
