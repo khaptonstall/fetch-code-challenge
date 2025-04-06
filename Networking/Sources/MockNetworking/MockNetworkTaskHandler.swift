@@ -1,9 +1,4 @@
-//
-//  MockNetworkTaskHandler.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import Networking
@@ -38,12 +33,14 @@ public actor MockNetworkTaskHandler {
     // MARK: Initialization
 
     public init() {}
-    
+
     // MARK: Mocking
 
-    public func mockRequest(_ request: URLRequest,
-                            statusCode: Int,
-                            data: Data?) throws {
+    public func mockRequest(
+        _ request: URLRequest,
+        statusCode: Int,
+        data: Data?
+    ) throws {
         guard let rawHTTPMethod = request.httpMethod,
               let httpMethod = HTTPMethod(rawValue: rawHTTPMethod),
               let host = request.url?.host(),
@@ -67,11 +64,13 @@ public actor MockNetworkTaskHandler {
     ///   - path: The path to a given resource to mock, including a leading slash. (e.g. "/path/to/resource")
     ///   - statusCode: The status code to response with.
     ///   - data: The data to respond with.
-    public func mockRequest(httpMethod: HTTPMethod,
-                            host: String,
-                            path: String = "",
-                            statusCode: Int = 200,
-                            data: Data? = nil) {
+    public func mockRequest(
+        httpMethod: HTTPMethod,
+        host: String,
+        path: String = "",
+        statusCode: Int = 200,
+        data: Data? = nil
+    ) {
         let sanitizedPath = {
             guard !path.isEmpty else { return path }
             if path.hasPrefix("/") {
@@ -84,7 +83,6 @@ public actor MockNetworkTaskHandler {
         let mockedResponse = MockedReponse(httpMethod: httpMethod, statusCode: statusCode, data: data)
         mockedRequests[requestKey] = mockedResponse
     }
-
 }
 
 // MARK: - NetworkTaskHandler

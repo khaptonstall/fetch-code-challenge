@@ -1,9 +1,4 @@
-//
-//  RecipeListViewModel.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import RecipesAPI
@@ -12,7 +7,6 @@ import SwiftUI
 /// A view model for the `RecipesList`.
 @MainActor
 class RecipeListViewModel: ObservableObject {
-
     enum State: Equatable {
         /// An initial, placeholder view model state.
         case none
@@ -40,14 +34,14 @@ class RecipeListViewModel: ObservableObject {
     // MARK: API
 
     func getRecipes() async {
-        guard self.state != .loading else { return }
+        guard state != .loading else { return }
 
         do {
-            self.state = .loading
-            self.recipes = try await recipesAPI.getRecipes(.default)
-            self.state = .loaded
+            state = .loading
+            recipes = try await recipesAPI.getRecipes(.default)
+            state = .loaded
         } catch {
-            self.state = .error(message: error.localizedDescription)
+            state = .error(message: error.localizedDescription)
         }
     }
 }
@@ -55,14 +49,14 @@ class RecipeListViewModel: ObservableObject {
 // MARK: - Preview Support
 
 #if DEBUG
-class PreviewRecipeListViewModel: RecipeListViewModel {
-    init(recipes: [Recipe] = [], state: State = .none) {
-        super.init()
+    class PreviewRecipeListViewModel: RecipeListViewModel {
+        init(recipes: [Recipe] = [], state: State = .none) {
+            super.init()
 
-        self.recipes = recipes
-        self.state = state
+            self.recipes = recipes
+            self.state = state
+        }
+
+        override func getRecipes() async {}
     }
-
-    override func getRecipes() async {}
-}
 #endif

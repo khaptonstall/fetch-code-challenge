@@ -1,14 +1,8 @@
-//
-//  CodeChallengeTests.swift
-//  CodeChallengeTests
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import XCTest
 
 final class CodeChallengeTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -31,5 +25,4 @@ final class CodeChallengeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

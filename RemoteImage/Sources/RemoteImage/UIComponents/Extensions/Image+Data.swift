@@ -1,9 +1,4 @@
-//
-//  Image+Data.swift
-//  RemoteImage
-//
-//  Created by Kyle Haptonstall on 4/6/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import SwiftUI

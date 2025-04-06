@@ -1,14 +1,8 @@
-//
-//  NetworkTaskHandler.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 
 public protocol NetworkTaskHandler: Sendable {
-
     /// - Parameter request: The URLRequest for which to load data.
     /// - Parameter delegate: Task-specific delegate.
     /// - Returns: Data and response.

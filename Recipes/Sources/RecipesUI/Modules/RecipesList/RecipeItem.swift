@@ -1,9 +1,4 @@
-//
-//  RecipeItem.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import RemoteImage
 import SwiftUI
@@ -12,7 +7,6 @@ import SwiftUI
 
 /// Used to display a single recipe in a list-style view.
 struct RecipeItem: View {
-
     let cuisine: String
     let recipeName: String
     let photoURL: String?

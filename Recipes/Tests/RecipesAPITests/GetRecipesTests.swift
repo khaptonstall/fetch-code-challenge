@@ -1,18 +1,12 @@
-//
-//  GetRecipesTests.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
-@testable import RecipesAPI
 import MockNetworking
 import Networking
+@testable import RecipesAPI
 import XCTest
 
 final class GetRecipesTests: XCTestCase {
-
     func testGetRecipesWithValidData() async throws {
         // Setup a mocked Recipes API instance
         let mockTaskHandler = MockNetworkTaskHandler()
@@ -27,5 +21,4 @@ final class GetRecipesTests: XCTestCase {
         let response = try await recipesAPI.getRecipes()
         XCTAssertEqual(response, [expectedRecipe])
     }
-
 }

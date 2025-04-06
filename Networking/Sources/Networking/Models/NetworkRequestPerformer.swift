@@ -1,9 +1,4 @@
-//
-//  NetworkRequestPerformer.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 
@@ -21,7 +16,7 @@ public final class NetworkRequestPerformer: Sendable {
     }
 
     // MARK: Performing Requests
-    
+
     /// Attempts performing the given network request and decoding into the request's `ResponseDataType`.
     /// If the network request object defines any response validators, they will be executed against the
     /// response object and throw an error if validation fails.

@@ -1,16 +1,10 @@
-//
-//  RecipesAPI.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import Networking
 
 /// An object used to interact with the Recipe API.
 public final class RecipesAPI: Sendable {
-
     // MARK: Properties
 
     public static let shared = RecipesAPI()
@@ -26,11 +20,10 @@ public final class RecipesAPI: Sendable {
     }
 
     // MARK: APIs
-    
+
     /// Performs a network request and attempts to fetch a list of recipes.
     /// - Parameter networkRequest: The underlying `GetRecipes` request to perform.
     public func getRecipes(_ networkRequest: GetRecipes = .default) async throws -> GetRecipes.ResponseDataType {
         try await requestPerformer.performRequest(networkRequest)
     }
-
 }

@@ -1,9 +1,4 @@
-//
-//  MockNetworkRequest.swift
-//  Networking
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
 import Foundation
 import Networking
@@ -16,7 +11,7 @@ public struct MockNetworkRequest<T: Decodable>: NetworkRequest {
 
     private let request: URLRequest
     private let decoder: JSONDecoder
-    
+
     /// - Parameters:
     ///   - request: The url request this object represents
     ///   - responseValidators: Any validators that should be ran against a network response.
@@ -32,7 +27,7 @@ public struct MockNetworkRequest<T: Decodable>: NetworkRequest {
     }
 
     public func makeRequest() throws -> URLRequest {
-        return request
+        request
     }
 
     public func parseResponse(data: Data) throws -> T {

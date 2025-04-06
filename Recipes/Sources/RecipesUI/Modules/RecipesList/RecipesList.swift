@@ -1,12 +1,7 @@
-//
-//  RecipesList.swift
-//  Recipes
-//
-//  Created by Kyle Haptonstall on 4/5/25.
-//
+// Copyright © 2025 Kyle Haptonstall. All rights reserved.
 
-import SwiftUI
 import RecipesAPI
+import SwiftUI
 
 /// A view used to fetch and display a list of recipes.
 public struct RecipesList: View {
@@ -29,7 +24,7 @@ public struct RecipesList: View {
             switch viewModel.state {
             case .none, .loading:
                 LoadingView()
-            case .error(let message):
+            case let .error(message):
                 RecipeContentUnavailableView
                     .error(
                         message,
@@ -72,13 +67,13 @@ private struct LoadingView: View {
 // MARK: - Previews
 
 #if DEBUG
-private extension RecipesList {
-    init(recipes: [Recipe], state: RecipeListViewModel.State) {
-        self._viewModel = StateObject(
-            wrappedValue: PreviewRecipeListViewModel(recipes: recipes, state: state)
-        )
+    private extension RecipesList {
+        init(recipes: [Recipe], state: RecipeListViewModel.State) {
+            self._viewModel = StateObject(
+                wrappedValue: PreviewRecipeListViewModel(recipes: recipes, state: state)
+            )
+        }
     }
-}
 #endif
 
 #Preview("Loaded") {
