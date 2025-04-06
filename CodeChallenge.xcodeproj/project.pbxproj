@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E4939A6C2DA231BA009CF112 /* RecipesUI in Frameworks */ = {isa = PBXBuildFile; productRef = E4939A6B2DA231BA009CF112 /* RecipesUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E4DDD30B2DA18F0300B925A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4939A6C2DA231BA009CF112 /* RecipesUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,11 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4939A6A2DA231BA009CF112 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E4DDD2F02DA18F0200B925A3 = {
 			isa = PBXGroup;
 			children = (
 				E4DDD2FB2DA18F0200B925A3 /* CodeChallenge */,
 				E4DDD30D2DA18F0300B925A3 /* CodeChallengeTests */,
+				E4939A6A2DA231BA009CF112 /* Frameworks */,
 				E4DDD2FA2DA18F0200B925A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +103,7 @@
 			);
 			name = CodeChallenge;
 			packageProductDependencies = (
+				E4939A6B2DA231BA009CF112 /* RecipesUI */,
 			);
 			productName = CodeChallenge;
 			productReference = E4DDD2F92DA18F0200B925A3 /* CodeChallenge.app */;
@@ -146,6 +160,9 @@
 			);
 			mainGroup = E4DDD2F02DA18F0200B925A3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E4939A672DA230B9009CF112 /* XCLocalSwiftPackageReference "Recipes" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E4DDD2FA2DA18F0200B925A3 /* Products */;
 			projectDirPath = "";
@@ -461,6 +478,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E4939A672DA230B9009CF112 /* XCLocalSwiftPackageReference "Recipes" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Recipes;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4939A6B2DA231BA009CF112 /* RecipesUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RecipesUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4DDD2F12DA18F0200B925A3 /* Project object */;
 }
