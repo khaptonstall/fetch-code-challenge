@@ -75,7 +75,7 @@ private struct LoadingView: View {
 private extension RecipesList {
     init(recipes: [Recipe], state: RecipeListViewModel.State) {
         self._viewModel = StateObject(
-            wrappedValue: PreviewRecipeListModel(recipes: recipes, state: state)
+            wrappedValue: PreviewRecipeListViewModel(recipes: recipes, state: state)
         )
     }
 }

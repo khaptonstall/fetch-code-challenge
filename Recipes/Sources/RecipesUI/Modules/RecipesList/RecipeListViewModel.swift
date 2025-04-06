@@ -55,7 +55,7 @@ class RecipeListViewModel: ObservableObject {
 // MARK: - Preview Support
 
 #if DEBUG
-class PreviewRecipeListModel: RecipeListViewModel {
+class PreviewRecipeListViewModel: RecipeListViewModel {
     init(recipes: [Recipe] = [], state: State = .none) {
         super.init()
 
