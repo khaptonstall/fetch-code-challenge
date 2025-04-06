@@ -19,12 +19,14 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../Networking"),
+        .package(path: "../RemoteImage"),
     ],
     targets: [
         .target(
             name: "RecipesUI",
             dependencies: [
                 "RecipesAPI",
+                .product(name: "RemoteImage", package: "RemoteImage"),
             ]
         ),
         .target(

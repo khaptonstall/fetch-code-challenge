@@ -5,6 +5,7 @@
 //  Created by Kyle Haptonstall on 4/5/25.
 //
 
+import RemoteImage
 import SwiftUI
 
 // TODO: Load asset from `photoURL`
@@ -17,16 +18,27 @@ struct RecipeItem: View {
     let photoURL: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(recipeName)
-                .multilineTextAlignment(.leading)
-                .font(.headline)
-                .foregroundStyle(.primary)
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(recipeName)
+                    .multilineTextAlignment(.leading)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
 
-            Text(cuisine)
-                .multilineTextAlignment(.leading)
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                Text(cuisine)
+                    .multilineTextAlignment(.leading)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+
+            if let photoURLString = photoURL, let url = URL(string: photoURLString) {
+                RemoteImage(url: url)
+                    .frame(width: 75, height: 75)
+                    .cornerRadius(8)
+                    .accessibilityHidden(true)
+            }
         }
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
