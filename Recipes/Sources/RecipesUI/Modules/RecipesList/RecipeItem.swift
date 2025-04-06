@@ -28,6 +28,8 @@ struct RecipeItem: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
     }
 }
 
