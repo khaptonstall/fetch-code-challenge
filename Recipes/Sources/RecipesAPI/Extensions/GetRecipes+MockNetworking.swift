@@ -17,7 +17,7 @@ public extension MockNetworkTaskHandler {
         statusCode: Int = 200,
         recipes: [Recipe] = []
     ) throws {
-        let data = try JSONEncoder().encode(GetRecipesResponse(recipes: recipes))
+        let data = try JSONEncoder.default.encode(GetRecipesResponse(recipes: recipes))
         mockRequest(
             httpMethod: .get,
             host: RecipesAPI.host,
