@@ -10,30 +10,14 @@
 		E4939A6C2DA231BA009CF112 /* RecipesUI in Frameworks */ = {isa = PBXBuildFile; productRef = E4939A6B2DA231BA009CF112 /* RecipesUI */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E4DDD30B2DA18F0300B925A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4DDD2F12DA18F0200B925A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E4DDD2F82DA18F0200B925A3;
-			remoteInfo = CodeChallenge;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		E4DDD2F92DA18F0200B925A3 /* CodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4DDD30A2DA18F0300B925A3 /* CodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E4DDD2FB2DA18F0200B925A3 /* CodeChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CodeChallenge;
-			sourceTree = "<group>";
-		};
-		E4DDD30D2DA18F0300B925A3 /* CodeChallengeTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CodeChallengeTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -44,13 +28,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4939A6C2DA231BA009CF112 /* RecipesUI in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4DDD3072DA18F0300B925A3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				E4DDD2FB2DA18F0200B925A3 /* CodeChallenge */,
-				E4DDD30D2DA18F0300B925A3 /* CodeChallengeTests */,
 				E4939A6A2DA231BA009CF112 /* Frameworks */,
 				E4DDD2FA2DA18F0200B925A3 /* Products */,
 			);
@@ -78,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				E4DDD2F92DA18F0200B925A3 /* CodeChallenge.app */,
-				E4DDD30A2DA18F0300B925A3 /* CodeChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,29 +84,6 @@
 			productReference = E4DDD2F92DA18F0200B925A3 /* CodeChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E4DDD3092DA18F0300B925A3 /* CodeChallengeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4DDD3212DA18F0300B925A3 /* Build configuration list for PBXNativeTarget "CodeChallengeTests" */;
-			buildPhases = (
-				E4DDD3062DA18F0300B925A3 /* Sources */,
-				E4DDD3072DA18F0300B925A3 /* Frameworks */,
-				E4DDD3082DA18F0300B925A3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E4DDD30C2DA18F0300B925A3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E4DDD30D2DA18F0300B925A3 /* CodeChallengeTests */,
-			);
-			name = CodeChallengeTests;
-			packageProductDependencies = (
-			);
-			productName = CodeChallengeTests;
-			productReference = E4DDD30A2DA18F0300B925A3 /* CodeChallengeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,10 +96,6 @@
 				TargetAttributes = {
 					E4DDD2F82DA18F0200B925A3 = {
 						CreatedOnToolsVersion = 16.2;
-					};
-					E4DDD3092DA18F0300B925A3 = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = E4DDD2F82DA18F0200B925A3;
 					};
 				};
 			};
@@ -169,20 +117,12 @@
 			projectRoot = "";
 			targets = (
 				E4DDD2F82DA18F0200B925A3 /* CodeChallenge */,
-				E4DDD3092DA18F0300B925A3 /* CodeChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E4DDD2F72DA18F0200B925A3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4DDD3082DA18F0300B925A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,22 +139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4DDD3062DA18F0300B925A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E4DDD30C2DA18F0300B925A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E4DDD2F82DA18F0200B925A3 /* CodeChallenge */;
-			targetProxy = E4DDD30B2DA18F0300B925A3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E4DDD31C2DA18F0300B925A3 /* Debug */ = {
@@ -342,7 +267,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodeChallenge/Configuration/CodeChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"CodeChallenge/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -375,7 +299,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CodeChallenge/Configuration/CodeChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"CodeChallenge/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -401,52 +324,6 @@
 			};
 			name = Release;
 		};
-		E4DDD3222DA18F0300B925A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylehaptonstall.CodeChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CodeChallenge";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		E4DDD3232DA18F0300B925A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kylehaptonstall.CodeChallengeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CodeChallenge";
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,15 +341,6 @@
 			buildConfigurations = (
 				E4DDD31F2DA18F0300B925A3 /* Debug */,
 				E4DDD3202DA18F0300B925A3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4DDD3212DA18F0300B925A3 /* Build configuration list for PBXNativeTarget "CodeChallengeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4DDD3222DA18F0300B925A3 /* Debug */,
-				E4DDD3232DA18F0300B925A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
